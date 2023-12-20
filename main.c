@@ -132,14 +132,15 @@ void actionNode(int player)
     {
         //case lecture:
         case SMMNODE_TYPE_LECTURE:
-             if 
-            cur_player[player].accumCredit += smmObj_getNodeCredit( boardPtr );
-            cur_player[player].energy -= smmObj_getNodeEnergy( boardPtr );
+            if (cur_player[player].accumCredit < GRADUATE_CREDIT)
+            {
+			  cur_player[player].accumCredit += smmObj_getNodeCredit( boardPtr );
+              cur_player[player].energy -= smmObj_getNodeEnergy( boardPtr );
             
-            //grade generation
-            gradePtr = smmObj_genObject(name, smmObjType_grade, 0, smmObj_getNodeCredit( boardPtr ), 0, 0);
-            smmdb_addTail(LISTNO_OFFSET_GRADE + player, gradePtr);
-            
+              //grade generation
+              gradePtr = smmObj_genObject(name, smmObjType_grade, 0, smmObj_getNodeCredit( boardPtr ), 0, ??? );
+              smmdb_addTail(LISTNO_OFFSET_GRADE + player, gradePtr);
+            }
             break;
             
         default:
@@ -155,7 +156,7 @@ void goForward(int player, int step)
      
      printf("%s go to node %i (name: %s)\n", 
                 cur_player[player].name, cur_player[player].position,
-                smmObj_getNodeName(boardPtr);
+                smmObj_getNodeName(boardPtr));
 }
 
 

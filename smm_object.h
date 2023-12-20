@@ -8,6 +8,7 @@
 #ifndef smm_object_h
 #define smm_object_h
 
+
 #define SMMNODE_TYPE_LECTURE            0
 #define SMMNODE_TYPE_RESTAURANT         1
 #define SMMNODE_TYPE_LABORATORY         2
@@ -23,6 +24,18 @@ typedef enum smmObjType {
     smmObjType_card,
     smmObjType_grade
 } smmObjType_e;
+
+typedef enum smmObjGrade {
+    smmObjGrade_Ap = 0,
+    smmObjGrade_A0,
+    smmObjGrade_Am,
+    smmObjGrade_Bp,
+    smmObjGrade_B0,
+    smmObjGrade_Bm,
+    smmObjGrade_Cp,
+    smmObjGrade_C0,
+    smmObjGrade_Cm
+} smmObjGrade_e;
 
 /* node type :
     lecture,

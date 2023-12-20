@@ -4,9 +4,9 @@
 //
 //  Created by Juyeop Kim on 2023/11/05.
 //
-
 #include "smm_common.h"
 #include "smm_object.h"
+
 #include <string.h>
 
 #define MAX_NODETYPE    7
@@ -53,8 +53,8 @@ typedef struct smmObject {
        smmObjGrade_e grade;
 } smmObject_t;
 
-//static smmObject_t smm_node[MAX_NODE];
-//static int smmObj_noNode = 0;
+static smmObject_t smm_node[MAX_NODE];
+static int smmObj_noNode = 0;
 
 //3. 관련 함수 변경 
 //object generation
