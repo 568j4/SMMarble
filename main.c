@@ -11,9 +11,13 @@
 #include "smm_database.h"
 #include "smm_common.h"
 
+
+
 #define BOARDFILEPATH "marbleBoardConfig.txt"
 #define FOODFILEPATH "marbleFoodConfig.txt"
 #define FESTFILEPATH "marbleFestivalConfig.txt"
+
+
 
 
 //board configuration parameters
@@ -128,6 +132,8 @@ void actionNode(int player)
     char *name = smmObj_getNodeName( boardPtr );
     void *gradePtr;
     
+ 
+    
     switch(type)
     {
         //case lecture:
@@ -138,7 +144,7 @@ void actionNode(int player)
               cur_player[player].energy -= smmObj_getNodeEnergy( boardPtr );
             
               //grade generation
-              gradePtr = smmObj_genObject(name, smmObjType_grade, 0, smmObj_getNodeCredit( boardPtr ), 0, ??? );
+              gradePtr = smmObj_genObject(name, smmObjType_grade, 0, smmObj_getNodeCredit( boardPtr ), 0, smmObjGrade_Ap );
               smmdb_addTail(LISTNO_OFFSET_GRADE + player, gradePtr);
             }
             break;
