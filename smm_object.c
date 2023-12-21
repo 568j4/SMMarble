@@ -14,6 +14,7 @@
 #define MAX_NODE        100
 
 
+
 static char smmNodeName[SMMNODE_TYPE_MAX][MAX_CHARNAME] = {
        "강의",
        "식당",
@@ -43,8 +44,16 @@ typedef struct smmObject {
        smmObjGrade_e grade;
 } smmObject_t;
 
+
 static smmObject_t smm_node[MAX_NODE];
 static int smmObj_noNode = 0;
+
+int smmObj_getNodeGrade(void* obj)
+{
+    smmObject_t* ptr = (smmObject_t*)obj;
+    
+    return ptr->grade;
+}
 
 //3. 관련 함수 변경 
 //object generation

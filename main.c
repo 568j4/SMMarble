@@ -29,6 +29,7 @@ static int player_nr;
 
 
 
+
 typedef struct player {
         int energy;
         int position;
